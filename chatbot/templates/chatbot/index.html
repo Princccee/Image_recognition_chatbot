@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot Interface</title>
+    <link rel="stylesheet" href="{% static 'chatbot/style.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar with chat history -->
+        <div class="sidebar">
+            <div class="new-chat">
+                <button id="newChatBtn">
+                    <i class="fas fa-plus"></i> New Chat
+                </button>
+            </div>
+            <div class="chat-history" id="chatHistory">
+                <!-- Chat history items will be added here -->
+            </div>
+        </div>
+
+        <!-- Main chat interface -->
+        <div class="main-content">
+            <!-- Language selector -->
+            <div class="language-selector">
+                <select id="languageSelect">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="zh">中文</option>
+                </select>
+            </div>
+
+            <!-- Add ChatLens branding -->
+            <div id="brandingCenter" class="branding-center">
+                <h1>ChatLens</h1>
+                <p>Your Intelligent Chat Assistant</p>
+            </div>
+            <div id="brandingCorner" class="branding-corner hidden">
+                ChatLens
+            </div>
+
+            <!-- Chat messages container -->
+            <div class="chat-container" id="chatContainer">
+                <!-- Messages will be added here -->
+            </div>
+
+            <!-- Input area -->
+            <div class="input-area">
+                <div class="input-container">
+                    <textarea id="userInput" placeholder="Type your message here..." rows="1"></textarea>
+                    <div class="input-buttons">
+                        <button id="imageBtn" title="Upload Image">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                        <button id="micBtn" title="Voice Input">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                        <button id="sendBtn" title="Send Message">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+                <input type="file" id="imageInput" accept="image/*" style="display: none">
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'chatbot/script.js' %}"></script>
+    {% comment %} <script src="script.js"></script> {% endcomment %}
+</body>
+</html>
